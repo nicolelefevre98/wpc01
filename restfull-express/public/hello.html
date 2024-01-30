@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    <script>
+        fetch('/api/v1/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: 'irrumabo@it.dk',
+                password: 'ladida',
+            }),
+        })
+        .then((res) => res.json())    
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log('CATCH');
+            console.log(err);
+        });
+    </script>
+</body>
+</html>
